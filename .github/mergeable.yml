@@ -1,8 +1,7 @@
-version: 2
 mergeable:
-  - when: pull_request.*, pull_request_review.*
-    validate:
-      - do: title
-        begins_with:
-          match: ['feat', 'bug']
-          message: 'Type is required....'
+  pull_requests:
+    title: 'WIP'
+    exclude: 'approvals,description'
+    label: 'WIP|validation wanted|help wanted|needs work'
+  issues:
+    exclude: 'description'
